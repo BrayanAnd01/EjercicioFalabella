@@ -59,23 +59,11 @@
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Ejercicio" sap:VirtualizedContainerService.HintSize="1084,18012" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
-      <Variable x:TypeArguments="x:String" Name="Url">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">http://thedemosite.co.uk/index.php</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="http://thedemosite.co.uk/index.php" Name="Url" />
       <Variable x:TypeArguments="x:Boolean" Name="ExistElement" />
       <Variable x:TypeArguments="x:Int32" Name="ConErrores" />
-      <Variable x:TypeArguments="x:String" Name="Ruta">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\User\Downloads\</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="Destinatario">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">pruebarpa0101@hotmail.com</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="C:\Users\User\Downloads\" Name="Ruta" />
+      <Variable x:TypeArguments="x:String" Default="pruebarpa0101@hotmail.com" Name="Destinatario" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -94,11 +82,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,207.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:Size x:Key="ShapeSize">200,52</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,258.5 300,278.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[Url]">
+      <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[Url]">
         <ui:OpenBrowser.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -117,11 +105,11 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,278.5</av:Point>
-              <av:Size x:Key="ShapeSize">200,93</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,371.5 300,401.5 300.141666666667,401.5 300.141666666667,418.5</av:PointCollection>
+              <av:Size x:Key="ShapeSize">200,96</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">300,374.5 300,404.5 300.141666666667,404.5 300.141666666667,418.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:UiElementExists sap2010:Annotation.AnnotationText="Se valida la disponibilidad del sitio web" DisplayName="Element Exists 'STRONG'" Exists="[ExistElement]" sap:VirtualizedContainerService.HintSize="200,93" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+          <ui:UiElementExists sap2010:Annotation.AnnotationText="Se valida la disponibilidad del sitio web" DisplayName="Element Exists 'STRONG'" Exists="[ExistElement]" sap:VirtualizedContainerService.HintSize="200,96" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="27039bb4-29c2-4c57-871b-59c11d6a5d07" InformativeScreenshot="7a16a9001dca63fa40190b32c0ce8e1f" Selector="&lt;html app='chrome.exe' title='FREE example PHP code and online MySQL database - example username password protected site' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;center&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;center&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;font&amp;gt;big&amp;gt;strong' tag='STRONG' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -139,17 +127,14 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:UiElementExists>
           <FlowStep.Next>
-            <FlowDecision x:Name="__ReferenceID2" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-              <FlowDecision.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ExistElement" />
-              </FlowDecision.Condition>
+            <FlowDecision x:Name="__ReferenceID2" Condition="[ExistElement]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <av:Point x:Key="ShapeLocation">260.641666666667,418.5</av:Point>
                   <av:Size x:Key="ShapeSize">79,87</av:Size>
                   <av:PointCollection x:Key="TrueConnector">260.641666666667,462 180,462 180,537</av:PointCollection>
-                  <av:PointCollection x:Key="FalseConnector">339.641666666667,462 369.641666666667,462 369.641666666667,460 530,460</av:PointCollection>
+                  <av:PointCollection x:Key="FalseConnector">339.641666666667,462 369.641666666667,462 369.641666666667,462.5 530,462.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <FlowDecision.True>
@@ -157,11 +142,11 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">80,537</av:Point>
-                      <av:Size x:Key="ShapeSize">200,97</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">180,634 180,684</av:PointCollection>
+                      <av:Size x:Key="ShapeSize">200,99</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">180,636 180,684</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap2010:Annotation.AnnotationText="Descarga el archivo .zip " DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="200,97" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence sap2010:Annotation.AnnotationText="Descarga el archivo .zip " DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="476,529" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -220,10 +205,10 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">80,684</av:Point>
-                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                          <av:Size x:Key="ShapeSize">200,144</av:Size>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(Ruta).[Select](Function(x) New FileInfo(x)).Where(Function(f) f.Extension.Equals(&quot;.zip&quot;)).OrderByDescending(Function(x) x.LastWriteTime)]">
+                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Recorre la carpeta Descargas y selecciona el ultimo archivo descargado con extension .zip para enviarlo por correo" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,144" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(Ruta).[Select](Function(x) New FileInfo(x)).Where(Function(f) f.Extension.Equals(&quot;.zip&quot;)).OrderByDescending(Function(x) x.LastWriteTime)]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
@@ -238,9 +223,7 @@
                               <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Account="brayanska011@hotmail.com" Body="[“Buen dia,&quot;+ Environment.NewLine +  &quot;Adjunto se encuentra el archivo .zip descargado de la pagina http://thedemosite.co.uk/index.php.&quot;+ Environment.NewLine +&quot;gracias&quot;]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Ejercicio Falabella (Archivo.zip)" To="[Destinatario]">
                                 <ui:SendOutlookMail.Files>
                                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                    <InArgument x:TypeArguments="x:String">
-                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="item.ToString" />
-                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String">[item.ToString]</InArgument>
                                   </scg:List>
                                 </ui:SendOutlookMail.Files>
                               </ui:SendOutlookMail>
@@ -251,6 +234,7 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEach>
@@ -263,11 +247,11 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">530,398.5</av:Point>
-                      <av:Size x:Key="ShapeSize">200,123</av:Size>
+                      <av:Size x:Key="ShapeSize">200,128</av:Size>
                       <av:PointCollection x:Key="ConnectorLocation">630,398.5 630,273.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap2010:Annotation.AnnotationText="Se cierra el navegador para realizar reintentos de ingreso a la plataforma" DisplayName="Reintentos" sap:VirtualizedContainerService.HintSize="200,123" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence sap2010:Annotation.AnnotationText="Se cierra el navegador para realizar reintentos de ingreso a la plataforma" DisplayName="Reintentos" sap:VirtualizedContainerService.HintSize="200,128" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -285,31 +269,25 @@
                     <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome" />
                   </Sequence>
                   <FlowStep.Next>
-                    <FlowDecision x:Name="__ReferenceID5" DisplayName="Validar 3 intentos" sap:VirtualizedContainerService.HintSize="96,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-                      <FlowDecision.Condition>
-                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ConErrores&lt;=3" />
-                      </FlowDecision.Condition>
+                    <FlowDecision x:Name="__ReferenceID5" Condition="[ConErrores&lt;=3]" DisplayName="Validar 3 intentos" sap:VirtualizedContainerService.HintSize="98,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2" True="{x:Reference __ReferenceID0}">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <av:Point x:Key="ShapeLocation">582,186.5</av:Point>
-                          <av:Size x:Key="ShapeSize">96,87</av:Size>
+                          <av:Size x:Key="ShapeSize">98,87</av:Size>
                           <av:PointCollection x:Key="TrueConnector">582,230 552,230 552,233 400,233</av:PointCollection>
-                          <av:PointCollection x:Key="FalseConnector">678,230 790,230</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">680,230 710,230 710,232.5 790,232.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <FlowDecision.True>
-                        <x:Reference>__ReferenceID0</x:Reference>
-                      </FlowDecision.True>
                       <FlowDecision.False>
                         <FlowStep x:Name="__ReferenceID6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">790,168.5</av:Point>
-                              <av:Size x:Key="ShapeSize">200,123</av:Size>
+                              <av:Size x:Key="ShapeSize">200,128</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence sap2010:Annotation.AnnotationText="Se envia correo notificando la no disponibilidad de sitio Web" DisplayName="Envio correo " sap:VirtualizedContainerService.HintSize="200,123" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence sap2010:Annotation.AnnotationText="Se envia correo notificando la no disponibilidad de sitio Web" DisplayName="Envio correo " sap:VirtualizedContainerService.HintSize="200,128" sap2010:WorkflowViewState.IdRef="Sequence_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
