@@ -85,7 +85,7 @@
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="Destinatario">
                   <Variable.Default>
-                    <Literal x:TypeArguments="x:String">pruebarpa0101@hotmail.com</Literal>
+                    <Literal x:TypeArguments="x:String">jossandoval@falabella.com.co</Literal>
                   </Variable.Default>
                 </Variable>
               </Sequence.Variables>
